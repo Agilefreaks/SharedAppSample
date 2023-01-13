@@ -23,7 +23,7 @@ object Dependencies {
 
     object AndroidX {
         const val CORE = "androidx.core:core-ktx:1.9.0"
-        const val APPCOMPAT = "androidx.appcompat:appcompat:1.5.1"
+        const val APPCOMPAT = "androidx.appcompat:appcompat:1.6.0"
         const val CUSTOM_VIEW_POOLINGCONTAINER = "androidx.customview:customview-poolingcontainer:1.0.0"
 
         object Paging {
@@ -42,7 +42,7 @@ object Dependencies {
         object Compose {
             const val VERSION = "1.3.2"
 
-            const val UI = "androidx.compose.ui:ui:1.3.2"
+            const val UI = "androidx.compose.ui:ui:1.3.3"
 
             // Tooling support (Previews, etc.)
             const val UI_TOOLING = "androidx.compose.ui:ui-tooling:1.3.2"
