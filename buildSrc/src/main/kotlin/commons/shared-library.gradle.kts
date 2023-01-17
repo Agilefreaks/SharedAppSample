@@ -35,11 +35,16 @@ kotlin {
                 implementation(TestDependencies.Apollo.MOCK_SERVER)
                 implementation(TestDependencies.Kotlinx.Coroutines.TEST)
 
-                implementation(TestDependencies.Suparnatural.FS)
+//                implementation(TestDependencies.Suparnatural.FS)
+                implementation(TestDependencies.MOCKATIVE)
             }
         }
         val androidMain by getting
-        val androidTest by getting
+        val androidTest by getting {
+            dependencies {
+                implementation(TestDependencies.Suparnatural.FS_ANDROID)
+            }
+        }
         val iosX64Main by getting
         val iosArm64Main by getting
         val iosSimulatorArm64Main by getting
@@ -49,7 +54,11 @@ kotlin {
             iosArm64Main.dependsOn(this)
             iosSimulatorArm64Main.dependsOn(this)
         }
-        val iosX64Test by getting
+        val iosX64Test by getting {
+            dependencies {
+                implementation(TestDependencies.Suparnatural.FS_IOS_X64)
+            }
+        }
         val iosArm64Test by getting
         val iosSimulatorArm64Test by getting
         val iosTest by creating {
@@ -68,4 +77,13 @@ android {
         minSdk = BuildAndroidConfig.MIN_SDK_VERSION
         targetSdk = BuildAndroidConfig.TARGET_SDK_VERSION
     }
+}
+
+
+dependencies {
+    configurations
+        .filter { it.name.startsWith("ksp") && it.name.contains("Test") }
+        .forEach {
+            add(it.name, "io.mockative:mockative-processor:1.3.1")
+        }
 }

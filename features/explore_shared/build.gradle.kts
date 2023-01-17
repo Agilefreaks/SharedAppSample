@@ -3,6 +3,8 @@ import dependencies.Dependencies
 plugins {
     plugin(BuildPlugins.sharedLibrary)
     plugin(BuildPlugins.apollo)
+
+    id("com.google.devtools.ksp") version "1.7.20-1.0.8"
 }
 
 dependencies {

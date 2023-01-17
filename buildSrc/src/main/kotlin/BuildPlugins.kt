@@ -8,6 +8,6 @@ object BuildPlugins {
 
     val apollo = GradlePlugin(id = "com.apollographql.apollo3", version = dependencies.Dependencies.Apollo.VERSION)
 
-    val detekt = GradlePlugin("plugins.detekt")
+    val detekt = GradlePlugin(id = "plugins.detekt")
     val updateDependencies = GradlePlugin(id = "plugins.update-dependencies")
 }
