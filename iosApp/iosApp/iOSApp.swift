@@ -7,7 +7,7 @@ struct iOSApp: App {
     init() {
         ExploreKt.doInitKoin(properties: [
             Properties.shared.SERVER_URL:"https://api.github.com/graphql",
-            Properties.shared.TOKEN: "your token"]
+            Properties.shared.TOKEN: "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"]
         )
     }
     

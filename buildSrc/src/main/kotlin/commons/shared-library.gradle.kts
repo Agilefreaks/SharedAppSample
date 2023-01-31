@@ -40,7 +40,7 @@ kotlin {
             }
         }
         val androidMain by getting
-        val androidTest by getting {
+        val androidInstrumentedTest by getting {
             dependencies {
                 implementation(TestDependencies.Suparnatural.FS_ANDROID)
             }
